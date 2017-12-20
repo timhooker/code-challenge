@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  color: "red"
+  make: "ford"
+  model: "silverado"
+  year: 2017
+
+two:
+  color: "blue"
+  make: "chevy"
+  model: "camero"
+  year: 2014

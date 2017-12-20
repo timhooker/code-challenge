@@ -6,3 +6,7 @@ COPY Gemfile /cars/Gemfile
 COPY Gemfile.lock /cars/Gemfile.lock
 RUN bundle install
 COPY . /cars
+
+# Get stuff running
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["rails", "server", "puma"]
