@@ -27,7 +27,6 @@ def number_game(limit:int):
         state = take_a_guess(state)
     return state
 
-
 def take_a_guess(state):
     """"logic for guessing numbers and getting feedback"""
     guess = binary_search(state['start'], state['end'])
@@ -40,17 +39,16 @@ def take_a_guess(state):
         response = input(f"Is your number {guess}? ")
     return update_state(state, guess, response)
 
-
 def binary_search(start:int, end:int):
     """Utility Function to divide search point"""
-    return int(math.ceil((end - start) / 2 + start))
+    return int(math.floor((end - start) / 2) + start)
 
 def update_state(state, guess, response):
     """Updating internal state of game based on user response"""
     if(response is 'h'):
-        state['end'] = guess
+        state['end'] = guess - 1
     elif(response is 'l'):
-        state['start'] = guess
+        state['start'] = guess + 1
     elif(response is 'c'):
         state['finished'] = True
         state['number'] = guess
