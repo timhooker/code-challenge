@@ -2,17 +2,19 @@ module Api
   module V1
     class CarsController < ApplicationController
       before_action :fetch_car, only: %i[show update]
+      protect_from_forgery with: :null_session
 
       def index
-        render json: {data: Car.take(10) }
+        render json: { data: Car.last(10) }
       end
 
       def show
-        render json: {data: @car }
+        render json: { data: @car }
       end
 
       def create
-        Car.create(car_params)
+        car = Car.create(car_params)
+        render json: { data: car }
       end
 
       def update

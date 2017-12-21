@@ -1,0 +1,84 @@
+body {
+  padding: 32px;
+}
+.cars {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cars__add,
+.cars__title {
+  flex-basis: 100%;
+}
+.dataTable {
+  display: flex;
+  padding-left: 0;
+}
+.dataTable__header {
+  background-color: #fafafa;
+}
+.dataTable__header,
+.dataTable__row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.dataTable__row:hover {
+  background-color: #ddd;
+}
+.dataTable__cell {
+  padding: 16px;
+  flex-basis: 25%;
+  text-align: center;
+  border-bottom: 1px solid #efefef;
+}
+.carForm,
+.carShow,
+.carList {
+  max-width: 50%;
+  flex-basis: 48%;
+  border: 1px solid #fafafa;
+  box-shadow: 2px 2px 2px #efefef;
+}
+.carShow h5 {
+  opacity: .7;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.carForm__submit {
+  background-color: rgb(0, 188, 212);
+  border-color: buttonface;
+  color: #fff; 
+  margin-top: 16px;
+}
+.carForm__cancel {
+  margin-top: 16px;
+}
+.carForm__input {
+  margin-top: 16px;
+  padding: 8px 12px;
+}
+.carList {
+  margin-right: 2%;
+}
+button {
+  position: relative; 
+  opacity: 1; 
+  font-size: 14px; 
+  letter-spacing: 0px; 
+  text-transform: uppercase; 
+  font-weight: 500; 
+  margin: 0px; 
+  user-select: none; 
+  padding: 12px 16px;
+  background-color: transparent;
+}
+@media only screen and (min-width: 500px) {
+  .dataTable {
+    flex-direction: column;
+  }
+  .dataTable__header,
+  .dataTable__row {
+    flex-direction: row;
+  }
+}

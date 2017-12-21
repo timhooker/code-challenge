@@ -2,6 +2,15 @@ version: '3'
 services:
   db:
     image: postgres
+  webpacker:
+    build: .
+    env_file:
+      - '.env.docker'
+    command: bundle exec webpack-dev-server
+    volumes:
+      - .:/cars
+    ports:
+      - '3035:3035'
   web:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
